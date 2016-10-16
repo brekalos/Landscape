@@ -58,7 +58,7 @@
 
 
 <div class="row">
-      <div style= " margin-left: 320px" class="col s12 m6">
+      <div  class="col s12 m6">
         <div class="card">
           <div class="card-content black-text">
             <span class="card-title">Email Authentication</span>
@@ -73,8 +73,8 @@
               <br>
                <div  class="row">
                  <div class="input-field col s12">
-                   <input id="email" type="email" class="validate">
-                   <label for="email">Email</label>
+                   <input id="gmail" type="email" class="validate">
+                   <label for="email">Google Account</label>
                  </div>
                </div>
 
@@ -94,33 +94,22 @@
                <label for="test5">Remember Me</label>
              </p>
 
-<div style="padding-top: 100px
-            padding-right:30px;
-            padding-bottom: 0px;
-            padding-left: 70px;">
-
-             <button id="login"
+             <button id="google"
              class="btn waves-effect waves-light"
-             style="background-color:#00CF11"
+             style="background-color:#0266C8"
              type="submit"
-             name="action">Login
+             name="action"
+             align="right">Sign in With Google &nbsp;
+             <img
+             src="https://assets.materialup.com/uploads/7ba6f741-2ff3-4d2f-8439-a160aa884e7b/preview"
+             style="width:36px;height:36px;"
+             align="right">
+             </button>
+
+             <button id="login" class="btn waves-effect waves-light" style="background-color:#00CF11" type="submit" name="action">Login
             <i class="material-icons right">send</i>
             </button>
-</div>
-<div style="padding-top: 0px;
-            padding-right: 30px;
-            padding-bottom: 50px;
-            padding-left: 300px;">
-            <button id="google"
-            onClick=googlelink()
-            class="btn waves-effect waves-light"
-            style="background-color:#0266C8">Sign in With Google &nbsp; &nbsp;
-            <img
-            src="https://assets.materialup.com/uploads/7ba6f741-2ff3-4d2f-8439-a160aa884e7b/preview"
-            style="width:36px;height:36px;"
-            align="right">
-            </button>
-</div>
+
           </div>
      </div>
    </div>
@@ -130,33 +119,12 @@
 
 
 <script>
-//Database User Login
-var email = document.getElementById("email");
-const password = document.getElementById("password");
-const login = document.getElementById("login");
-const create = document.getElementById("create")
-
-document.getElementById("login").addEventListener('click', e => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const auth = firebase.auth();
-
-const promise = auth.signInWithEmailAndPassword(email, password)
-promise.catch(e => console.log(e.message));
-});
-
 
 //display username
 var user = firebase.auth().currentUser;
 
 function user() {
   console.log("Logged in")
-}
-
-
-//google authentication page link to
-function googlelink (){
-  window.open("GoogleAuth.html")
 }
 
 
